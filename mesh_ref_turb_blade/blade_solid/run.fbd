@@ -1,0 +1,18 @@
+read solid.inp
+
+# remove surface elements
+
+zap +CPS6
+
+send fixed abq nam
+send interface abq nam
+
+
+
+send all abq
+
+
+#send wall abq nam
+#comp wall do
+#send wall abq pres 1.2e4
+

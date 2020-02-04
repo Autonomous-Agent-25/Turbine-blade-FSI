@@ -1,0 +1,89 @@
+
+************************************************************
+
+CalculiX Version 2.15, Copyright(C) 1998-2018 Guido Dhondt
+CalculiX comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+certain conditions, see gpl.htm
+
+************************************************************
+
+You are using an executable made on Sa 15. Dez 15:34:34 CET 2018
+
+  The numbers below are estimated upper bounds
+
+  number of:
+
+   nodes:          609
+   elements:         2178
+   one-dimensional elements:            0
+   two-dimensional elements:            0
+   integration points per element:           15
+   degrees of freedom per node:            3
+   layers per element:            1
+
+   distributed facial loads:            0
+   distributed volumetric loads:            0
+   concentrated loads:         1317
+   single point constraints:          117
+   multiple point constraints:            1
+   terms in all multiple point constraints:            1
+   tie constraints:            0
+   dependent nodes tied by cyclic constraints:            0
+   dependent nodes in pre-tension constraints:            0
+
+   sets:            4
+   terms in all sets:         1960
+
+   materials:            1
+   constants per material and temperature:            2
+   temperature points per material:            1
+   plastic data points per material:            0
+
+   orientations:            0
+   amplitudes:            2
+   data points in all amplitudes:            2
+   print requests:            0
+   transformations:            0
+   property cards:            0
+
+ *INFO reading *STEP: nonlinear geometric
+       effects are turned on
+
+
+ STEP            1
+
+ Dynamic analysis was selected
+
+ Newton-Raphson iterative procedure is active
+
+ Nonlinear geometric effects are taken into account
+
+ Decascading the MPC's
+
+ Determining the structure of the matrix:
+ number of equations
+ 1710
+ number of nonzero lower triangular matrix elements
+ 52137
+
+Starting FSI analysis via preCICE using the geometrically non-linear CalculiX solver...
+ Using up to 1 cpu(s) for the stress calculation.
+
+ Using up to 1 cpu(s) for the symmetric stiffness/mass contributions.
+
+ Factoring the system of equations using the symmetric spooles solver
+ Using 1 cpu for spooles.
+
+ Using up to 1 cpu(s) for the stress calculation.
+
+About to enter preCICE setup in Calculix with names Calculix and config.yml 
+Setting up preCICE participant Calculix, using config file: config.yml
+---[precice] [0m This is preCICE version 1.6.1
+---[precice] [0m Revision info: no-info [Git failed/Not a repository]
+---[precice] [0m Configuring preCICE with configuration: "./precice-config.xml"
+---[precice] [0m Run in coupling mode
+Set ID Found 
+Read data 'Forces0' found.
+Write data 'DisplacementDeltas0' found.
+---[precice] [0m Setting up master communication to coupling partner/s

@@ -1,0 +1,144 @@
+
+-------------------------------------------------------------------------
+|    ___ _   _ ___                                                      |
+|   / __| | | |_  )   Release 6.0.0  "Falcon"                           |
+|   \__ \ |_| |/ /                                                      |
+|   |___/\___//___|   Suite (Computational Fluid Dynamics Code)         |
+|                                                                       |
+-------------------------------------------------------------------------
+| The current SU2 release has been coordinated by the                   |
+| SU2 International Developers Society <www.su2devsociety.org>          |
+| with selected contributions from the open-source community.           |
+-------------------------------------------------------------------------
+| The main research teams contributing to the current release are:      |
+| - Prof. Juan J. Alonso's group at Stanford University.                |
+| - Prof. Piero Colonna's group at Delft University of Technology.      |
+| - Prof. Nicolas R. Gauger's group at Kaiserslautern U. of Technology. |
+| - Prof. Alberto Guardone's group at Polytechnic University of Milan.  |
+| - Prof. Rafael Palacios' group at Imperial College London.            |
+| - Prof. Vincent Terrapon's group at the University of Liege.          |
+| - Prof. Edwin van der Weide's group at the University of Twente.      |
+| - Lab. of New Concepts in Aeronautics at Tech. Inst. of Aeronautics.  |
+-------------------------------------------------------------------------
+| Copyright 2012-2018, Francisco D. Palacios, Thomas D. Economon,       |
+|                      Tim Albring, and the SU2 contributors.           |
+|                                                                       |
+| SU2 is free software; you can redistribute it and/or                  |
+| modify it under the terms of the GNU Lesser General Public            |
+| License as published by the Free Software Foundation; either          |
+| version 2.1 of the License, or (at your option) any later version.    |
+|                                                                       |
+| SU2 is distributed in the hope that it will be useful,                |
+| but WITHOUT ANY WARRANTY; without even the implied warranty of        |
+| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU      |
+| Lesser General Public License for more details.                       |
+|                                                                       |
+| You should have received a copy of the GNU Lesser General Public      |
+| License along with SU2. If not, see <http://www.gnu.org/licenses/>.   |
+-------------------------------------------------------------------------
+
+------------------------ Physical Case Definition -----------------------
+Compressible Euler equations.
+Mach number: 0.01.
+Angle of attack (AoA): 0 deg, and angle of sideslip (AoS): 0 deg.
+Performing a dynamic mesh simulation: Reading and writing ASCII SU2 native restart files.
+Read flow solution from: Fluid/.
+Dimensional simulation.
+The reference area is 1 m^2.
+The semi-span will be computed using the max y(3D) value.
+The reference length is 1 m.
+Reference origin for moment evaluation is (4.65127e-310, 4.65127e-310, 0).
+Surface(s) where the force coefficients are evaluated: 
+Input mesh file name: Fluid/fluidMesh.su2
+
+---------------------- Space Numerical Integration ----------------------
+Jameson-Schmidt-Turkel scheme (2nd order in space) for the flow inviscid terms.
+JST viscous coefficients (2nd & 4th): 0.5, 0.02.
+The method includes a grid stretching correction (p = 0.3).
+Gradient computation using Green-Gauss theorem.
+
+---------------------- Time Numerical Integration -----------------------
+Unsteady simulation, dual time stepping strategy (first order in time).
+Unsteady time step provided by the user (s): 1e-05.
+Total number of internal Dual Time iterations: 200.
+Euler implicit method for the flow equations.
+FGMRES is used for solving the linear system.
+Using a LU-SGS preconditioning.
+Convergence criteria of the linear solver: 0.0001.
+Max number of linear iterations: 20.
+V Multigrid Cycle, with 3 multigrid levels.
+Damping factor for the residual restriction: 0.9.
+Damping factor for the correction prolongation: 0.9.
+No CFL adaptation.
+Multigrid Level:                       0     1     2     3
+Courant-Friedrichs-Lewy number:        2
+MG PreSmooth coefficients:             1     2     3     3
+MG PostSmooth coefficients:            0     0     0     0
+MG CorrecSmooth coefficients:          0     0     0     0
+
+------------------------- Convergence Criteria --------------------------
+Maximum number of iterations: 999999.
+Reduce the density residual 1 orders of magnitude.
+The minimum bound for the density residual is 10^(-3.5).
+Start convergence criteria at iteration 10.
+
+-------------------------- Output Information ---------------------------
+Writing a flow solution every 1 iterations.
+Writing the convergence history every 1 iterations.
+Writing the dual time flow solution every 1 iterations.
+Writing the dual time convergence history every 1 iterations.
+The output file format is Paraview ASCII (.vtk).
+Convergence history file name: history.
+Forces breakdown file name: forces_breakdown.dat.
+Surface flow coefficients file name: surface_flow.
+Flow variables file name: flow.
+Restart flow file name: restart_flow.dat.
+
+------------------- Config File Boundary Information --------------------
+Euler wall boundary marker(s): upper_wall, lower_wall, side_wall, wetSurface0.
+Inlet boundary marker(s): inlet.
+Outlet boundary marker(s): outlet.
+
+---------------------- Read Grid File Information -----------------------
+Three dimensional problem.
+3396 points before parallel partitioning.
+Performing linear partitioning of the grid nodes.
+14164 interior elements before parallel partitioning.
+Calling the partitioning functions.
+Building the graph adjacency structure.
+Distributing elements across all ranks.
+1 surface markers.
+866 boundary elements in index 0 (Marker = wetSurface0).
+Calling ParMETIS...
+Finished partitioning using ParMETIS (684 edge cuts).
+Communicating partition data and creating halo layers.
+15068 interior elements including halo cells. 
+15068 tetrahedra.
+3695 vertices including ghost points. 
+Establishing MPI communication patterns.
+
+------------------------- Geometry Preprocessing ------------------------
+Setting point connectivity.
+Renumbering points (Reverse Cuthill McKee Ordering).
+Recomputing point connectivity.
+Setting element connectivity.
+
+
+Error in "virtual void CPhysicalGeometry::SetBoundVolume()": 
+-------------------------------------------------------------------------
+The surface element (0, 0) doesn't have an associated volume element
+------------------------------ Error Exit -------------------------------
+
+
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 0.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+
+real	0m1.004s
+user	0m0.941s
+sys	0m0.287s
